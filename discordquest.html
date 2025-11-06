@@ -13,11 +13,21 @@
 
 <body class="bg-dark text-light p-3">
 
+<a href="index.html">
+  <button class="btn btn-primary">Home</button>
+</a>
+
+<br><br><br><br>
+
 <a href="https://gist.github.com/aamiaa/204cd9d42013ded9faf646fae7f89fbb">code is from here</a>
 
 <br><br><br><br>
 
-<pre class="border border-danger-subtle">
+  <button class="btn btn-primary" id="copyBtn">Copy text</button>
+
+<br><br>
+
+<pre class="border border-danger-subtle" id="codeBlock">
 delete window.$;
 let wpRequire = webpackChunkdiscord_app.push([[Symbol()], {}, r => r]);
 webpackChunkdiscord_app.pop();
@@ -172,6 +182,16 @@ if(!quest) {
 	}
 }
 </pre>
+
+  <script>
+    document.getElementById('copyBtn').addEventListener('click', () => {
+      const code = document.getElementById('codeBlock').innerText;
+      navigator.clipboard.writeText(code);
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = 'Copy', 1500);
+    });
+  </script>
 
 </body>
 
