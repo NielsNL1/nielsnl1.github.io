@@ -1,3 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My personal website</title>
+<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+
+</head>
+
+<body class="bg-dark text-light p-3">
+
+<a href="index.html">
+<button class="btn btn-primary">Home</button>
+</a>
+
+<br><br><br><br>
+
+<a href="https://gist.github.com/aamiaa/204cd9d42013ded9faf646fae7f89fbb">code is from here</a>
+
+<br><br><br><br>
+
+<button class="btn btn-primary" id="copyBtn">Copy text</button>
+
+<br><br>
+
+<h1>This specific codeblock is licensed under GPL-3.0, see source.</h1>
+
+<pre class="border border-danger-subtle" id="codeBlock">
 delete window.$;
 let wpRequire = webpackChunkdiscord_app.push([[Symbol()], {}, r => r]);
 webpackChunkdiscord_app.pop();
@@ -164,3 +196,18 @@ if(quests.length === 0) {
 	}
 	doJob()
 }
+</pre>
+
+<script>
+document.getElementById('copyBtn').addEventListener('click', () => {
+const code = document.getElementById('codeBlock').innerText;
+navigator.clipboard.writeText(code);
+const btn = document.getElementById('copyBtn');
+btn.textContent = 'Copied!';
+setTimeout(() => btn.textContent = 'Copy', 1500);
+});
+</script>
+
+</body>
+
+</html>
